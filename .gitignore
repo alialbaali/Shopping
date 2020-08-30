@@ -1,0 +1,11 @@
+/.gradle
+/.idea
+/out
+/build
+*.iml
+*.ipr
+*.iws
+*identifier.sqlite
+*hprof
+*build/*
+*/build/*
