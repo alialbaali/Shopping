@@ -6,4 +6,8 @@ interface LocalStorage {
 
     suspend fun get(key: String): Result<String>
 
+    suspend fun remove(key: String): Result<Unit>
+
+    suspend fun clear(): Result<Unit>
+
 }
