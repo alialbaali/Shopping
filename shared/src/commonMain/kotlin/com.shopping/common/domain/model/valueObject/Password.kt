@@ -1,23 +1,19 @@
-package com.shopping.domain.model.valueObject
-
-import com.shopping.Errors
+package com.shopping.common.domain.model.valueObject
 
 inline class Password(private val value: String) {
 
     companion object {
 
-        private val REGEX = Regex("^(?=.*?[0-9]).{8,}$")
+        private val Regex = Regex("^(?=.*?[0-9]).{8,}$")
 
         fun create(password: String, hash: String.() -> String): Result<Password> =
-            if (password.matches(REGEX)) {
+            if (password.matches(Regex)) {
                 val hashedPassword = password.hash()
                 Result.success(Password(hashedPassword))
             } else {
-                Result.failure(Throwable(Errors.INVALID_PASSWORD))
+                Result.failure(Throwable())
             }
-
     }
 
     override fun toString(): String = value
-
 }

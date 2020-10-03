@@ -1,7 +1,6 @@
-package com.shopping.domain.model.valueObject
+package com.shopping.common.domain.model.valueObject
 
 import kotlinx.datetime.LocalDate
-
 
 data class Card(
     val brand: String = String(),

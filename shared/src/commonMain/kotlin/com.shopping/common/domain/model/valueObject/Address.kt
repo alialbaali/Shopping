@@ -1,4 +1,4 @@
-package com.shopping.domain.model.valueObject
+package com.shopping.common.domain.model.valueObject
 
 data class Address(
     val name: String,
