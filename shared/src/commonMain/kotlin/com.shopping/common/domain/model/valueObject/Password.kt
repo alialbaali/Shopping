@@ -1,15 +1,14 @@
 package com.shopping.common.domain.model.valueObject
 
-inline class Password(private val value: String) {
+inline class Password(private val value: String = "") {
 
     companion object {
 
         private val Regex = Regex("^(?=.*?[0-9]).{8,}$")
 
-        fun create(password: String, hash: String.() -> String): Result<Password> =
+        fun create(password: String): Result<Password> =
             if (password.matches(Regex)) {
-                val hashedPassword = password.hash()
-                Result.success(Password(hashedPassword))
+                Result.success(Password(password))
             } else {
                 Result.failure(Throwable())
             }

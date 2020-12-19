@@ -1,7 +1,7 @@
 package com.shopping.common.domain.model.valueObject
 
 
-inline class Email(private val value: String) {
+inline class Email(private val value: String = "") {
 
     companion object {
 

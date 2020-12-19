@@ -7,7 +7,7 @@ import kotlinx.datetime.LocalDate
 private const val CustomerDefaultImageUrl = "https://res.cloudinary.com/shopping-cloud/image/upload/v1598449571/placeHolder_elsjfb.png"
 
 data class Customer(
-    val id: String,
+    val id: String = String(),
     val name: String,
     val email: Email,
     val password: Password,
