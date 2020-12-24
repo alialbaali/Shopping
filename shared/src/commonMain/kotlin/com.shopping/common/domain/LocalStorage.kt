@@ -1,10 +1,12 @@
 package com.shopping.common.domain
 
+import kotlinx.coroutines.flow.Flow
+
 interface LocalStorage {
 
-    suspend fun put(key: String, value: String): Result<Unit>
+    suspend fun get(key: String): Result<Flow<String>>
 
-    suspend fun get(key: String): Result<String>
+    suspend fun put(key: String, value: String): Result<Unit>
 
     suspend fun remove(key: String): Result<Unit>
 
